@@ -17,7 +17,7 @@ class CreateNewCustomerTblTable extends Migration
             $table->increments('newCid');
             $table->string('address')->nullable(false);
             $table->string('ticketUrl')->unique()->nullable(false);
-            $table->string('invalidDate')->nullable(false);
+            $table->date('invalidDate')->nullable(false);
             $table->timestamps();
         });
     }
