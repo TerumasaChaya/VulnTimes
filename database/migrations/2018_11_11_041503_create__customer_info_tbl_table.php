@@ -13,8 +13,13 @@ class CreateCustomerInfoTblTable extends Migration
      */
     public function up()
     {
-        Schema::create('_customer_info_tbl', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('CustomerInfoTbl', function (Blueprint $table) {
+            $table->increments('customer_id');
+            $table->string("login_id")->unique()->nullable(false);
+            $table->string("firstName")->nullable(false);
+            $table->string("lastName")->nullable(false);
+            $table->string("address")->unique()->nullable(false);
+            $table->string("passwd")->nullable(false);
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateCustomerInfoTblTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_customer_info_tbl');
+        Schema::dropIfExists('customerInfoTbl');
     }
 }
