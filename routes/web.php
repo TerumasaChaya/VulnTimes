@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('/demo', function () {
-    return view('demo');
+    return view('main/demo');
 });
 
 Route::resource('tasks','TasksController');
